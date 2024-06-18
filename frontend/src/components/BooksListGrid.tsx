@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Grid, Typography, styled } from '@mui/material';
 
 import { BookCard, EmptyBookCard } from '.';
@@ -21,13 +22,15 @@ const BookListGrid: React.FC<BookListGridProps> = ({ books }) => {
   const { fullName } = useAuth();
   const { readingListBooks } = useReadingList();
 
-  const toBeDisplayedBooks = !fullName ? books : readingListBooks;
+  const toBeDisplayedBooks = useMemo(() => {
+    return !fullName ? books : readingListBooks;
+  }, [fullName, books, readingListBooks]);
 
   return (
     <>
       <ReadingListText variant='h6'>Reading List</ReadingListText>
       <Grid container spacing={2}>
-        {!readingListBooks.length ? (
+        {fullName && !readingListBooks.length ? (
           <Grid item xs={12} sm={6} md={3} lg={2} spacing={2}>
             <EmptyBookCard />
           </Grid>

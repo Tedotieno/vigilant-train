@@ -34,7 +34,7 @@ const EmptyCard = () => {
         </Typography>
       </EmptyCardImageContainer>
       <EmptyCardFooter>
-        <Typography variant='body2' align='center' style={{ width: '100%' }}>
+        <Typography align='center' style={{ width: '100%' }}>
           Happy Adding!
         </Typography>
       </EmptyCardFooter>

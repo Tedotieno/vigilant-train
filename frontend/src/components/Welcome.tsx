@@ -7,7 +7,6 @@ import {
   Button,
   Paper,
 } from '@mui/material';
-
 import { useAuth } from '../context/Auth';
 
 const WelcomeBackground = styled(Box)(() => ({
@@ -25,10 +24,22 @@ const WelcomeBackground = styled(Box)(() => ({
 const WelcomeContainer = styled(Paper)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  width: '30%',
   padding: '2% 1%',
   color: theme.palette.secondary.main,
   background: 'white',
+  maxWidth: '500px',
+  width: '80%',
+  margin: '0 auto',
+
+  [theme.breakpoints.up('sm')]: {
+    width: '60%',
+  },
+  [theme.breakpoints.up('md')]: {
+    width: '40%',
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: '30%',
+  },
 }));
 
 const StyledButton = styled(Button)(() => ({

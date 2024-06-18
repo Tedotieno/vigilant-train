@@ -102,15 +102,17 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         </Box>
         <Box>
           <MenuButton sx={{ padding: '0' }} onClick={handleClick}>
-            <span className='material-symbols-outlined' color='red'>
-              more_vert
-            </span>
+            <span className='material-symbols-outlined'>more_vert</span>
           </MenuButton>
           <Menu
             id={`demo-positioned-menu-${book.id}`}
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: -75,
+            }}
           >
             <MenuItem onClick={handleRemoveBook}>Remove</MenuItem>
           </Menu>

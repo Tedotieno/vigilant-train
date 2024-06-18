@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { CircularProgress, Box } from '@mui/material';
 
 import { BookListGrid, BooksSearch } from '.';
 import { useApi } from '../hooks/api';
@@ -18,7 +19,11 @@ const BOOKS_QUERY = `
 `;
 
 const Books: React.FC = () => {
-  const { data, loading, error } = useApi<{ books: Book[] }>(BOOKS_QUERY);
+  const {
+    data,
+    loading = true,
+    error,
+  } = useApi<{ books: Book[] }>(BOOKS_QUERY);
   const [allBooks, setAllBooks] = useState<Book[]>([]);
 
   useEffect(() => {
@@ -33,7 +38,16 @@ const Books: React.FC = () => {
   }, [data]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <Box
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        height='100%'
+      >
+        <CircularProgress />
+      </Box>
+    );
   }
 
   if (error) {
@@ -41,12 +55,10 @@ const Books: React.FC = () => {
   }
 
   return (
-    <>
-      <ReadingListProvider>
-        <BooksSearch books={allBooks} />
-        <BookListGrid books={allBooks} />
-      </ReadingListProvider>
-    </>
+    <ReadingListProvider>
+      <BooksSearch books={allBooks} />
+      <BookListGrid books={allBooks} />
+    </ReadingListProvider>
   );
 };
 
