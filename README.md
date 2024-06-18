@@ -1,12 +1,12 @@
 <h1 align="center">A simplified Ello web viewer product built wit React</h1>
 
-![App screenshot](<public/screeenshots/Screenshot 2024-06-18 at 13.01.29.png>)
+![Alt screenshot](<frontend/public/screeenshots/Screenshot 2024-06-18 at 13.01.29.png>)
 
 ## What is this and who is it for 🤷‍♀️
 
 Ello's Fullstack Engineering challenge to be assesessed by the Engineering team for a FullStack role with a frontend focus.
 
-## Features
+## Features 🏎
 
 - Simple Auth with localStorage and context
 - Search bar preloaded with books that can be assigned to a reading list
