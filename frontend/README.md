@@ -33,4 +33,4 @@ Ran out of time there's still a few things I would have implemented
 - Testing
 - Etc, etc, etc ... Lol
 
-I had a ton of fun building this, hope you like what you see, with love ❤️
+I had a ton of fun designing & building this, hope you like what you see, with love ❤️
